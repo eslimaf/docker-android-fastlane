@@ -3,8 +3,6 @@ FROM circleci/android:api-27-alpha
 RUN locale-gen en_US.UTF-8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
-USER root
-
 # nodejs, zip, to unzip things
 RUN apt-get update && \
     apt-get -y install zip expect && \
