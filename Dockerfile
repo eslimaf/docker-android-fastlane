@@ -1,15 +1,9 @@
-FROM circleci/android:api-27-alpha
+FROM circleci/android:api-27-node8-alpha
 
 RUN locale-gen en_US.UTF-8
 ENV LANG='en_US.UTF-8' LANGUAGE='en_US:en' LC_ALL='en_US.UTF-8'
 
 USER root
-
-# nodejs, zip, to unzip things
-RUN apt-get update && \
-    apt-get -y install zip expect && \
-    curl -sL https://deb.nodesource.com/setup_6.x | bash - && \
-    apt-get install -y nodejs
 
 # install yarn
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
